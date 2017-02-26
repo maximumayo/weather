@@ -9,6 +9,8 @@ $(document).ready(function () {
                 dataTyple: "jsonp",
                 success: function (data) {
                     console.log(data);
+                    $('#result').html(display(data));
+                    $('#city').val('');
                 }
             });
         }
@@ -17,3 +19,11 @@ $(document).ready(function () {
         }
     });
 });
+
+function display(data){
+
+    return  "<h2>City: " + data.name + "</h2>" +
+            "<h2>Tempurature: " + data.main.temp + " ˚F" + "</h2>" +
+            "<h2>Humidity: " + data.main.humidity + " %" + "</h2>" +
+            "<h2>Conditions: " + data.weather[0].description + "</h2>"
+};
