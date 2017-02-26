@@ -8,8 +8,16 @@ $(document).ready(function () {
                 type: "GET",
                 dataTyple: "jsonp",
                 success: function (data) {
+                    var tempRound = Math.round(data.main.temp);
                     console.log(data);
+                    function display(data) {
+                        return "<h2>City: " + "<span style='color:blue;'>" + data.name + "</span>" + "</h2>" +
+                            "<h2>Tempurature: " + "<span style='color:blue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
+                            "<h2>Humidity: " + "<span style='color:blue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
+                            "<h2>Conditions: " + "<span style='color:blue;'>" + data.weather[0].description + "</span>" + "</h2>"
+                    };
                     $('#result').html(display(data));
+                    //clear input field
                     $('#city').val('');
                 }
             });
@@ -19,11 +27,3 @@ $(document).ready(function () {
         }
     });
 });
-
-function display(data){
-
-    return  "<h2>City: " + data.name + "</h2>" +
-            "<h2>Tempurature: " + data.main.temp + " ˚F" + "</h2>" +
-            "<h2>Humidity: " + data.main.humidity + " %" + "</h2>" +
-            "<h2>Conditions: " + data.weather[0].description + "</h2>"
-};
