@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Weather</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="weather.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 class="text-center" id="heading">Current Weather</h1>
+    </div>
+
+    <div class="row form-group form-inline text-center">
+        <input type="text" name="city" class="form-control" id="city" placeholder="City Name">
+        <button id="submit" class="btn btn-primary">Search Weather</button>
+    </div>
+
+    <div id="result"></div>
+
+</div>
+
+</body>
+</html>
