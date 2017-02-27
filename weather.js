@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //when get weather btn is clicked
     $('#submit').click(function () {
         var city = $('#city').val();
         var key = "APPID=f21989bd78835a17e7bb52aae32725ab";
@@ -12,10 +13,10 @@ $(document).ready(function () {
                     var tempRound = Math.round(data.main.temp);
                     //format data to be displayed
                     function display(data) {
-                        return "<h2>City: " + "<span style='color:cornflowerblue;'>" + data.name + "</span>" + "</h2>" +
-                            "<h2>Tempurature: " + "<span style='color:cornflowerblue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
-                            "<h2>Humidity: " + "<span style='color:cornflowerblue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
-                            "<h2>Conditions: " + "<span style='color:cornflowerblue;'>" + data.weather[0].description + "</span>" + "</h2>"
+                        return "<h2>City: " + "<span class='info'>" + data.name + "</span>" + "</h2>" +
+                            "<h2>Tempurature: " + "<span class='info'>" + tempRound + "˚F" + "</span>" + "</h2>" +
+                            "<h2>Humidity: " + "<span class='info'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
+                            "<h2>Conditions: " + "<span class='info'>" + data.weather[0].description + "</span>" + "</h2>"
                     }
 
                     $('#result').html(display(data));
@@ -28,7 +29,7 @@ $(document).ready(function () {
             alert("please enter a location");
         }
     });
-
+    //when enter key is pressed
     $('#city').keypress(function (key) {
         if (key.which == 13) {
             var city = $('#city').val();
@@ -43,10 +44,10 @@ $(document).ready(function () {
                         var tempRound = Math.round(data.main.temp);
                         //format data to be displayed
                         function display(data) {
-                            return "<h2>City: " + "<span style='color:cornflowerblue;'>" + data.name + "</span>" + "</h2>" +
-                                "<h2>Tempurature: " + "<span style='color:cornflowerblue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
-                                "<h2>Humidity: " + "<span style='color:cornflowerblue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
-                                "<h2>Conditions: " + "<span style='color:cornflowerblue;'>" + data.weather[0].description + "</span>" + "</h2>"
+                            return "<h2>City: " + "<span class='info'>" + data.name + "</span>" + "</h2>" +
+                                "<h2>Tempurature: " + "<span class='info'>" + tempRound + "˚F" + "</span>" + "</h2>" +
+                                "<h2>Humidity: " + "<span class='info'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
+                                "<h2>Conditions: " + "<span class='info'>" + data.weather[0].description + "</span>" + "</h2>"
                         }
 
                         $('#result').html(display(data));
@@ -60,5 +61,4 @@ $(document).ready(function () {
             }
         }
     });
-
 });
