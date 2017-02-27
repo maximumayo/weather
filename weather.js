@@ -10,13 +10,13 @@ $(document).ready(function () {
                 success: function (data) {
                     var tempRound = Math.round(data.main.temp);
                     console.log(data);
-
+                    //format data to be displayed
                     function display(data) {
                         return "<h2>City: " + "<span style='color:blue;'>" + data.name + "</span>" + "</h2>" +
                             "<h2>Tempurature: " + "<span style='color:blue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
                             "<h2>Humidity: " + "<span style='color:blue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
                             "<h2>Conditions: " + "<span style='color:blue;'>" + data.weather[0].description + "</span>" + "</h2>"
-                    };
+                    }
                     $('#result').html(display(data));
                     //clear input field
                     $('#city').val('');
@@ -24,7 +24,7 @@ $(document).ready(function () {
             });
         }
         else {
-            alert("please enter location");
+            alert("please enter a location");
         }
     });
 
@@ -46,7 +46,7 @@ $(document).ready(function () {
                                 "<h2>Tempurature: " + "<span style='color:blue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
                                 "<h2>Humidity: " + "<span style='color:blue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
                                 "<h2>Conditions: " + "<span style='color:blue;'>" + data.weather[0].description + "</span>" + "</h2>"
-                        };
+                        }
                         $('#result').html(display(data));
                         //clear input field
                         $('#city').val('');
@@ -54,7 +54,7 @@ $(document).ready(function () {
                 });
             }
             else {
-                alert("please enter location");
+                alert("please enter a location");
             }
         }
     });
