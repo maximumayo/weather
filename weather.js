@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('#submit').click(function () {
         var city = $('#city').val();
         var key = "APPID=f21989bd78835a17e7bb52aae32725ab";
+        //make sure field it not empty
         if (city != '') {
             $.ajax({
                 url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&" + key,
@@ -16,6 +17,7 @@ $(document).ready(function () {
                             "<h2>Humidity: " + "<span style='color:cornflowerblue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
                             "<h2>Conditions: " + "<span style='color:cornflowerblue;'>" + data.weather[0].description + "</span>" + "</h2>"
                     }
+
                     $('#result').html(display(data));
                     //clear input field
                     $('#city').val('');
@@ -31,6 +33,7 @@ $(document).ready(function () {
         if (key.which == 13) {
             var city = $('#city').val();
             var key = "APPID=f21989bd78835a17e7bb52aae32725ab";
+            //make sure field it not empty
             if (city != '') {
                 $.ajax({
                     url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&" + key,
@@ -45,6 +48,7 @@ $(document).ready(function () {
                                 "<h2>Humidity: " + "<span style='color:cornflowerblue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
                                 "<h2>Conditions: " + "<span style='color:cornflowerblue;'>" + data.weather[0].description + "</span>" + "</h2>"
                         }
+
                         $('#result').html(display(data));
                         //clear input field
                         $('#city').val('');
