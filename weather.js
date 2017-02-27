@@ -9,13 +9,12 @@ $(document).ready(function () {
                 dataTyple: "jsonp",
                 success: function (data) {
                     var tempRound = Math.round(data.main.temp);
-                    console.log(data);
                     //format data to be displayed
                     function display(data) {
-                        return "<h2>City: " + "<span style='color:blue;'>" + data.name + "</span>" + "</h2>" +
-                            "<h2>Tempurature: " + "<span style='color:blue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
-                            "<h2>Humidity: " + "<span style='color:blue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
-                            "<h2>Conditions: " + "<span style='color:blue;'>" + data.weather[0].description + "</span>" + "</h2>"
+                        return "<h2>City: " + "<span style='color:cornflowerblue;'>" + data.name + "</span>" + "</h2>" +
+                            "<h2>Tempurature: " + "<span style='color:cornflowerblue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
+                            "<h2>Humidity: " + "<span style='color:cornflowerblue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
+                            "<h2>Conditions: " + "<span style='color:cornflowerblue;'>" + data.weather[0].description + "</span>" + "</h2>"
                     }
                     $('#result').html(display(data));
                     //clear input field
@@ -39,13 +38,12 @@ $(document).ready(function () {
                     dataTyple: "jsonp",
                     success: function (data) {
                         var tempRound = Math.round(data.main.temp);
-                        console.log(data);
-
+                        //format data to be displayed
                         function display(data) {
-                            return "<h2>City: " + "<span style='color:blue;'>" + data.name + "</span>" + "</h2>" +
-                                "<h2>Tempurature: " + "<span style='color:blue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
-                                "<h2>Humidity: " + "<span style='color:blue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
-                                "<h2>Conditions: " + "<span style='color:blue;'>" + data.weather[0].description + "</span>" + "</h2>"
+                            return "<h2>City: " + "<span style='color:cornflowerblue;'>" + data.name + "</span>" + "</h2>" +
+                                "<h2>Tempurature: " + "<span style='color:cornflowerblue;'>" + tempRound + "˚F" + "</span>" + "</h2>" +
+                                "<h2>Humidity: " + "<span style='color:cornflowerblue;'>" + data.main.humidity + "%" + "</span>" + "</h2>" +
+                                "<h2>Conditions: " + "<span style='color:cornflowerblue;'>" + data.weather[0].description + "</span>" + "</h2>"
                         }
                         $('#result').html(display(data));
                         //clear input field
