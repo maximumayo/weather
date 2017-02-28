@@ -8,7 +8,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&" + key,
                 type: "GET",
-                dataTyple: "jsonp",
+                dataType: "jsonp",
                 success: function (data) {
                     var tempRound = Math.round(data.main.temp);
                     //format data to be displayed
@@ -39,7 +39,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&" + key,
                     type: "GET",
-                    dataTyple: "jsonp",
+                    dataType: "jsonp",
                     success: function (data) {
                         var tempRound = Math.round(data.main.temp);
                         //format data to be displayed
